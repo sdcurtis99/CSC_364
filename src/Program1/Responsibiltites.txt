@@ -1,0 +1,16 @@
+Program 1: (Shannon)
+    Main
+    Producer
+    Repository
+    Consumers
+    Outsources
+    Remote Worker
+    Helper (Timer/Hashmap)
+    Publisher
+    Subscriber
+
+Program 2: (Joe)
+    Main
+    External Worker
+    Publisher
+    Subscriber
