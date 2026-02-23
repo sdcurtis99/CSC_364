@@ -1,3 +1,4 @@
+package Program1;
 public class Job {
 
     private final int id;

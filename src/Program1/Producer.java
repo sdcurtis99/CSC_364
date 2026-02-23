@@ -1,3 +1,4 @@
+package Program1;
 import java.util.Random;
 
 public class Producer implements Runnable {

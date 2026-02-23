@@ -1,13 +1,13 @@
-Program 1: (Shannon)
-    Main
-    Producer
-    Repository
-    Consumers
-    Outsources
-    Remote Worker
-    Helper (Timer/Hashmap)
-    Publisher
-    Subscriber
+Program 1: (Shannon & Abhi)
+    Main (Alter)
+    Producer (Alter)
+    Repository (Alter)
+    Consumers (Create)
+    Outsources (Create)
+    Remote Worker (Alter)
+    Helper (Timer/Hashmap) (Create)
+    Publisher (Alter)
+    Subscriber (Alter)
 
 Program 2: (Joe)
     Main

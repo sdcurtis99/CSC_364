@@ -1,8 +1,11 @@
+package Program1;
 public class Main {
 
     public static void main(String[] args) {
 
         int NCPU = Runtime.getRuntime().availableProcessors();
+        //System.out.println(NCPU);
+
 
         JobRepo repository = new JobRepo(NCPU);
 
