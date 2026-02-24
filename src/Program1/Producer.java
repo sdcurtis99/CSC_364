@@ -7,6 +7,9 @@ public class Producer implements Runnable {
     private int jobCounter = 0;
     private final Random random = new Random();
 
+    //Pay for job to be determined later
+    int temp_pay = 1;
+
     public Producer(JobRepo repository) {
         this.repository = repository;
     }
@@ -19,7 +22,7 @@ public class Producer implements Runnable {
                 int a = random.nextInt(10) + 1;
                 int b = random.nextInt(10) + 1;
 
-                Job job = new Job(jobCounter++, operator, a, b);
+                Job job = new Job(jobCounter++, operator, a, b,temp_pay);
                 repository.put(job);
 
                 Thread.sleep(200 + random.nextInt(842));
