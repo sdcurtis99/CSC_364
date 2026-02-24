@@ -1,49 +1,55 @@
 package Program1;
 
-import java.util.Stack;
+import java.util.ArrayDeque;
+import java.util.Queue;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class JobRepo {
 
-    private final Stack<Job> stack = new Stack<>();
-    private final int capacity;
+    private static JobRepo instance;
 
+    private static final Queue<Job> jobQueue = new ArrayDeque<>();
+    private final int capacity;
     private final Semaphore emptySlots;
     private final Semaphore availableItems;
-    private final ReentrantLock lock = new ReentrantLock();
+    private final ReentrantLock qLock = new ReentrantLock();
 
-    public JobRepo(int capacity) {
+    private JobRepo(int capacity) {
         this.capacity = capacity;
         this.emptySlots = new Semaphore(capacity);
         this.availableItems = new Semaphore(0);
     }
 
+    public static synchronized JobRepo getInstance(int getCapacity) {
+        if (instance == null) {
+            instance = new JobRepo(getCapacity);
+        }
+        return instance;
+    }
+
     public void put(Job job) throws InterruptedException {
         emptySlots.acquire();
-
-        lock.lock();
+        qLock.lock();
         try {
-            stack.push(job);
+            jobQueue.add(job);
             System.out.println("Producer added Job#" + job.getId());
         } finally {
-            lock.unlock();
+            qLock.unlock();
         }
-
         availableItems.release();
     }
 
+
     public Job take() throws InterruptedException {
         availableItems.acquire();
-
+        qLock.lock();
         Job job;
-        lock.lock();
         try {
-            job = stack.pop();
+            job = jobQueue.remove();
         } finally {
-            lock.unlock();
+            qLock.unlock();
         }
-
         emptySlots.release();
         return job;
     }

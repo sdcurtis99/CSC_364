@@ -5,6 +5,7 @@ public class Job {
     private final int operator; // 1=+, 2=-, 3=*, 4=/
     private final int a;
     private final int b;
+    private final int TEMP_PAY = 2;
 
     public Job(int id, int operator, int a, int b) {
         this.id = id;

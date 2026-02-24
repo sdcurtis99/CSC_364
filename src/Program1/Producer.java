@@ -22,7 +22,7 @@ public class Producer implements Runnable {
                 int a = random.nextInt(10) + 1;
                 int b = random.nextInt(10) + 1;
 
-                Job job = new Job(jobCounter++, operator, a, b,temp_pay);
+                Job job = new Job(jobCounter++, operator, a, b);
                 repository.put(job);
 
                 Thread.sleep(200 + random.nextInt(842));
