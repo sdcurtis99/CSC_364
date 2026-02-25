@@ -22,4 +22,8 @@
         </dependency>
     </dependencies>
 
+    <build>
+        <sourceDirectory>.</sourceDirectory>
+    </build>
+
 </project>

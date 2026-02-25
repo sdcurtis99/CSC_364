@@ -7,7 +7,7 @@ public class Main {
         //System.out.println(NCPU);
 
 
-        JobRepo repository = new JobRepo(NCPU);
+        JobRepo repository = JobRepo.getInstance(NCPU);
 
         Thread producerThread = new Thread(new Producer(repository));
         producerThread.start();
