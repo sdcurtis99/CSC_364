@@ -12,6 +12,7 @@ public class Helper {
     Calling Ex:
             <JobInfo.getID(), JobInfo>
     Should create a new class JobInfo for ease
+    Also could expand on the members of Job currently and utilize that <--
 
     Need to override the to string, hashcode, and equals depending on implementation for HashMap
 
