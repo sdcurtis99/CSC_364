@@ -15,7 +15,7 @@ public class JobRepo {
     private final Semaphore availableItems;
     private final ReentrantLock qLock = new ReentrantLock();
 
-    private JobRepo(int capacity) {
+    JobRepo(int capacity) {
         this.capacity = capacity;
         this.emptySlots = new Semaphore(capacity);
         this.availableItems = new Semaphore(0);
