@@ -72,7 +72,8 @@ public class ExternalWorker {
 
         // Solve the math job
         int result = solve(operator, a, b);
-        System.out.println(workerId + " solved Job#" + jobId + ": " + a + " op" + operator + " " + b + " = " + result);
+        String symbol = operatorSymbol(operator);
+        System.out.println(workerId + " solved Job#" + jobId + ": " + a + " " + symbol + " " + b + " = " + result);
 
         try {
             // Publish result back: workerId|jobId|result
@@ -84,6 +85,16 @@ public class ExternalWorker {
             System.out.println(workerId + " requesting work...");
         } catch (MqttException e) {
             e.printStackTrace();
+        }
+    }
+
+    private String operatorSymbol(int operator) {
+        switch (operator) {
+            case 1: return "+";
+            case 2: return "-";
+            case 3: return "*";
+            case 4: return "/";
+            default: return "?";
         }
     }
 
