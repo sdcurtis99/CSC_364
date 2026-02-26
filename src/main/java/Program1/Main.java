@@ -1,4 +1,5 @@
 package Program1;
+import java.util.UUID;
 
 public class Main {
 
@@ -10,6 +11,9 @@ public class Main {
 
         Thread producerThread = new Thread(new Producer(repository));
         producerThread.start();
+
+        Thread localWorkerThread = new Thread(new LocalWorker(repository, UUID.randomUUID()));
+        localWorkerThread.start();
 
         Outsourcer outsourcer = new Outsourcer(repository);
         outsourcer.start();

@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CSC_364_ConnectingTheDots_1.iml" filepath="$PROJECT_DIR$/CSC_364_ConnectingTheDots_1.iml" />
-      <module fileurl="file://$PROJECT_DIR$/src/Tool-MQTT.iml" filepath="$PROJECT_DIR$/src/Tool-MQTT.iml" />
     </modules>
   </component>
 </project>

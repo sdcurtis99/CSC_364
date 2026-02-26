@@ -1,13 +1,14 @@
 package Program1;
 import java.util.Random;
+import java.util.UUID;
 
 public class LocalWorker implements Runnable {
 
     private final JobRepo repository;
-    private final int workerId;
+    private final UUID workerId;
     private final Random random = new Random();   // ← add this
 
-    public LocalWorker(JobRepo repository, int workerId) {
+    public LocalWorker(JobRepo repository, UUID workerId) {
         this.repository = repository;
         this.workerId = workerId;
     }
