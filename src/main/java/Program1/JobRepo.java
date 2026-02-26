@@ -10,7 +10,7 @@ public class JobRepo {
     private static JobRepo instance;
 
     private static final Queue<Job> jobQueue = new ArrayDeque<>();
-    private final int capacity;
+    int capacity;
     private final Semaphore emptySlots;
     private final Semaphore availableItems;
     private final ReentrantLock qLock = new ReentrantLock();
